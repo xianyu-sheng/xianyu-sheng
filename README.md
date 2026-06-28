@@ -4,7 +4,16 @@
 
 <p align="center">
   <a href="https://github.com/xianyu-sheng"><img src="https://img.shields.io/badge/GitHub-xianyu--sheng-181717?style=flat-square&logo=github" alt="GitHub"></a>
-  <a href="mailto:your-email@example.com"><img src="https://img.shields.io/badge/Email-Reach%20Me-informational?style=flat-square&logo=gmail" alt="Email"></a>
+  <a href="https://github.com/xianyu-sheng/omniagent/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/omniagent?style=flat-square&label=omniagent" alt="omniagent release"></a>
+  <a href="https://github.com/xianyu-sheng/Agent-hub/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/Agent-hub?style=flat-square&label=agent-hub" alt="agent-hub release"></a>
+  <a href="https://github.com/xianyu-sheng/SmartBench/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/SmartBench?style=flat-square&label=smartbench" alt="smartbench release"></a>
+</p>
+
+<p align="center">
+  <b>📦 Quick Install:</b> &nbsp;
+  <code>pip install git+https://github.com/xianyu-sheng/omniagent.git</code> &nbsp;|&nbsp;
+  <code>pip install git+https://github.com/xianyu-sheng/Agent-hub.git</code> &nbsp;|&nbsp;
+  <code>pip install git+https://github.com/xianyu-sheng/SmartBench.git</code>
 </p>
 
 ---
