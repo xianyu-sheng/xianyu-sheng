@@ -73,9 +73,9 @@ I build practical AI agents and developer tools, with a focus on reliable tool u
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/xianyu-sheng/xianyu-sheng/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/xianyu-sheng/xianyu-sheng/output/github-contribution-grid-snake.svg" />
-    <img src="https://raw.githubusercontent.com/xianyu-sheng/xianyu-sheng/output/github-contribution-grid-snake.svg" alt="A snake eating my GitHub contributions" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/xianyu-sheng/xianyu-sheng/gh-pages/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/xianyu-sheng/xianyu-sheng/gh-pages/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/xianyu-sheng/xianyu-sheng/gh-pages/github-contribution-grid-snake.svg" alt="A snake eating my GitHub contributions" />
   </picture>
 </div>
 
