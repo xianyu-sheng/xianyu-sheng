@@ -65,10 +65,6 @@ I build practical AI agents and developer tools, with a focus on reliable tool u
   <img src="https://streak-stats.demolab.com?user=xianyu-sheng&theme=tokyonight&hide_border=true" alt="GitHub streak" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=xianyu-sheng&theme=tokyo-night&hide_border=true&area=true" alt="Contribution activity graph" />
-</div>
-
 ## Contribution snake
 
 <div align="center">
