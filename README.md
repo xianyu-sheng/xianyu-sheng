@@ -2,8 +2,6 @@
 
 M.S. student at CQUPT, building practical AI agents and developer tools.
 
-重庆邮电大学硕士研究生，关注 AI Agent、代码智能与开发者工具工程化。
-
 ## Featured work
 
 ### [Xenon](https://github.com/xianyu-sheng/Xenon)
