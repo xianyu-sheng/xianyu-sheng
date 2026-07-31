@@ -22,7 +22,8 @@ A developer workflow that turns repository activity into reviewed LaTeX résumé
 
 ## Open-source contribution
 
-- [DeepSeek-Reasonix PR #6618](https://github.com/esengine/DeepSeek-Reasonix/pull/6618) — fixed handling of a DeepSeek reasoning-only final response when `finish_reason=stop` (merged).
+- [DeepSeek-Reasonix PR #7086](https://github.com/esengine/DeepSeek-Reasonix/pull/7086) — 修复诊断建议门禁，触发维护者对 delivery 分类器的系统性加固（MERGED）
+- [DeepSeek-Reasonix PR #6618](https://github.com/esengine/DeepSeek-Reasonix/pull/6618) — 修复 DeepSeek V4 `finish_reason=stop` 时推理响应的处理（MERGED）
 
 ## Technologies
 
