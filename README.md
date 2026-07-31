@@ -25,7 +25,6 @@ A developer workflow that turns repository activity into reviewed LaTeX résumé
 ## Open-source contribution
 
 - [DeepSeek-Reasonix PR #6618](https://github.com/esengine/DeepSeek-Reasonix/pull/6618) — fixed handling of a DeepSeek reasoning-only final response when `finish_reason=stop` (merged).
-- [awesome-deepseek-agent PR #301](https://github.com/deepseek-ai/awesome-deepseek-agent/pull/301) — bilingual Xenon integration guide with verified DeepSeek V4 configuration (open).
 
 ## Technologies
 
