@@ -1,4 +1,4 @@
-# Hi, I'm Xianyu Sheng (张俊) 👋
+# Hi, I'm Xianyu Sheng 👋
 
 M.S. in Computer Science @ CQUPT (2027). I build **AI Agent infrastructure** — and I verify it with reproducible benchmarks and upstream contributions, not adjectives.
 
