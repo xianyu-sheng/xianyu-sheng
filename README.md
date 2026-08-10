@@ -1,30 +1,49 @@
-# Hi, I'm Xianyu Sheng 👋
+# Hi, I'm Xianyu Sheng (张俊) 👋
 
-M.S. student at CQUPT, building practical AI agents and developer tools.
+M.S. in Computer Science @ CQUPT (2027). I build **AI Agent infrastructure** — and I verify it with reproducible benchmarks and upstream contributions, not adjectives.
+
+My design philosophy, shared across everything I build:
+
+> **Let the model think. Let the program decide.**
+> LLM output is a *claim*; only a tool result is *evidence*.
+
+---
 
 ## Featured work
 
-### [Xenon](https://github.com/xianyu-sheng/Xenon)
+### [Xenon](https://github.com/xianyu-sheng/Xenon) — extensible terminal AI coding agent
 
-A terminal AI coding agent with DeepSeek V4 support, native tool calling, multiple execution engines, MCP integration, permission-gated tools, and a focused TUI. The project includes an automated test suite and documented end-to-end verification.
+An open-source agent runtime built around an **online Evidence Runtime**: a deterministic, zero-LLM verification chain that runs *vertically* through the whole task lifecycle (plan → pre-tool → execution → patch-binding → delivery). It treats every LLM statement as a claim to be verified against real tool results — catching "pasted a diff but never wrote the file" hallucinations at delivery time with zero false-kills.
 
-### [SmartBench](https://github.com/xianyu-sheng/SmartBench)
+- **SWE-bench_Lite official harness**: 30 instances, **36.7% instance-level** (11/30, single attempt) on the *cheapest* model tier — approaching Claude 3.5 Sonnet-level agents at ~1/100 the cost. Full methodology, sampling seed, cost accounting, and no-patch attribution are committed and reproducible ([report](https://github.com/xianyu-sheng/Xenon/blob/main/evals/results/SWEBENCH_REPORT.md)).
+- 7 inference paradigms (direct / ReAct / Plan-Execute / Reflection + combinations) over one engine abstraction; MCP-native tool layer; **2000+ unit tests** + CI on every commit.
+- Hardened via a systematic **boundary-probing methodology** (malformed input / path-traversal / corrupted-file probes on every public entry point) that surfaced and fixed real defects, including a session path-traversal and a permission-gate fail-open.
 
-An evidence-grounded code-diagnosis workbench that combines static analysis, repository context, and multi-agent review. The current focus is making findings reproducible and evaluating diagnostic quality against labeled cases.
+### [SmartBench](https://github.com/xianyu-sheng/SmartBench) — evidence-constrained code diagnosis
 
-### [Agent-hub](https://github.com/xianyu-sheng/Agent-hub)
+A code-diagnosis workbench that splits responsibility deliberately: language frontends and deterministic analyzers own source facts; the LLM may only *propose* hypotheses; resolvers and validators decide whether a claim binds back to real operations, types, and control flow. Under-supported conclusions stay `unknown`/`abstained` — they are never promoted to findings.
 
-A multi-agent orchestration project exploring intent routing, DAG scheduling, and collaboration strategies.
+- Real upstream bugs found and verified before submission — e.g. [stunner #89](https://github.com/firefart/stunner/issues/89) (TURN connection leak) confirmed fixed upstream; issues/PRs to sniproxy, Robyn, qscan.
 
-### [resume-sync](https://github.com/xianyu-sheng/resume-sync)
+---
 
-A developer workflow that turns repository activity into reviewed LaTeX résumé updates and PDF builds.
+## Open-source contributions
 
-## Open-source contribution
+**Merged into [DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)** (DeepSeek's official agent framework):
 
-- [DeepSeek-Reasonix PR #7086](https://github.com/esengine/DeepSeek-Reasonix/pull/7086) — 修复诊断建议门禁，触发维护者对 delivery 分类器的系统性加固（MERGED）
-- [DeepSeek-Reasonix PR #6618](https://github.com/esengine/DeepSeek-Reasonix/pull/6618) — 修复 DeepSeek V4 `finish_reason=stop` 时推理响应的处理（MERGED）
+- [#7086](https://github.com/esengine/DeepSeek-Reasonix/pull/7086) — preserve advisory diagnostics without weakening the evidence gate (merged 2026-07-31)
+- [#6618](https://github.com/esengine/DeepSeek-Reasonix/pull/6618) — honour `finish_reason=stop` on reasoning-only final answers (merged 2026-07-17)
 
-## Technologies
+**Open / under discussion:**
 
-`Python` · `C++` · `Go` · `TypeScript` · `LLM Agents` · `MCP` · `DeepSeek`
+- [NousResearch/hermes-agent #80155](https://github.com/NousResearch/hermes-agent/pull/80155) — gate finalization on active todos; surfaced a boundary that drew maintainer triage and a "facing the same problem" from the community.
+- [volcengine/veadk-python #716](https://github.com/volcengine/veadk-python/pull/716) — Xenon Skill + MCP interoperability docs.
+- [deepseek-ai/awesome-deepseek-agent #301](https://github.com/deepseek-ai/awesome-deepseek-agent/pull/301) — listing Xenon as a DeepSeek V4 terminal agent.
+
+---
+
+## What I'm looking for
+
+AI Agent / LLM application engineering roles (秋招 2027 届). I care about the layer between "the model said something" and "the system can trust it" — evaluation, evidence, reliability, and cost.
+
+📫 2107644732@qq.com · [Blog](https://xianyu-sheng.hashnode.dev/) · 小红书/抖音「手搓 AI Agent」
