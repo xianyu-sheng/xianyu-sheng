@@ -46,4 +46,4 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 
 AI Agent / LLM application engineering roles (秋招 2027 届). I care about the layer between "the model said something" and "the system can trust it" — evaluation, evidence, reliability, and cost.
 
-📫 2107644732@qq.com · [Blog](https://xianyu-sheng.hashnode.dev/) · 小红书/抖音「手搓 AI Agent」
+📫 2107644732@qq.com · [掘金 @闲余生](https://juejin.cn/user/1131827254804154) · 小红书/抖音「手搓 AI Agent」
