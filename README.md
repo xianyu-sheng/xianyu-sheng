@@ -75,7 +75,7 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 - **GitHub**: [@xianyu-sheng](https://github.com/xianyu-sheng)
 - **Email**: xianyu.sheng.research@gmail.com
 - **Technical blog**: [掘金 @闲余生](https://juejin.cn/user/1131827254804154)
-- **Location**: Chongqing, China (open to relocation)
+- **Location**: Chongqing / Chengdu, China (open to relocation)
 
 ---
 
