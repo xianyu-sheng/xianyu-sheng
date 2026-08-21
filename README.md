@@ -42,8 +42,41 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 
 ---
 
-## What I'm looking for
+---
 
-AI Agent / LLM application engineering roles (秋招 2027 届). I care about the layer between "the model said something" and "the system can trust it" — evaluation, evidence, reliability, and cost.
+## Technical focus
 
-📫 2107644732@qq.com · [掘金 @闲余生](https://juejin.cn/user/1131827254804154) · 小红书/抖音「手搓 AI Agent」
+**Research interests:**
+- Agent reasoning paradigms and evaluation methodology
+- Evidence-constrained architectures that treat LLM output as claims to be verified
+- Static analysis + semantic IR for deterministic code understanding
+- Cost-efficiency in production LLM applications
+
+**Currently exploring:**
+- Cross-language semantic analysis (Python, Go, TypeScript, Rust)
+- MCP protocol integration for agent tool ecosystems
+- Benchmark design for agent reliability measurement
+
+---
+
+## Open to opportunities
+
+**Seeking:** AI Agent / LLM Infrastructure engineering roles (2027 grad, available from July 2027)
+
+**What I bring:**
+- Reproducible evaluation methodology (SWE-bench, upstream bug verification)
+- Production-focused architecture design (caching, observability, evidence gates)
+- Cross-stack engineering (Python/Go/C++/TypeScript, static analysis, distributed systems)
+
+---
+
+## Contact
+
+- **GitHub**: [@xianyu-sheng](https://github.com/xianyu-sheng)
+- **Email**: xianyu.sheng.research@gmail.com
+- **Technical blog**: [掘金 @闲余生](https://juejin.cn/user/1131827254804154)
+- **Location**: Chongqing, China (open to relocation)
+
+---
+
+<sub>💡 **Open-source philosophy**: Every claim should be reproducible. Every benchmark should publish its methodology. Every "smart" system should show its work.</sub>
