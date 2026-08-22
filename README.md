@@ -1,23 +1,30 @@
 # Hi, I'm Xianyu Sheng 👋
 
-M.S. in Computer Science @ CQUPT (2027). I build **AI Agent infrastructure** — and I verify it with reproducible benchmarks and upstream contributions, not adjectives.
+M.S. in Computer Science @ CQUPT (2027). I build **Agent Harnesses** — the runtime layer that decides whether an AI agent's output can be trusted. I verify my work with reproducible benchmarks, adversarial boundary probing, and upstream contributions, not adjectives.
 
 My design philosophy, shared across everything I build:
 
 > **Let the model think. Let the program decide.**
 > LLM output is a *claim*; only a tool result is *evidence*.
 
+The corollary I keep returning to: capability benchmarks measure the model, but **the harness is what makes a result trustworthy**. So I work on the layers between "the model said something" and "the system can act on it" — constraint boundaries, evidence gates, and evaluation you can reproduce.
+
 ---
 
 ## Featured work
 
-### [Xenon](https://github.com/xianyu-sheng/Xenon) — extensible terminal AI coding agent
+### [Xenon](https://github.com/xianyu-sheng/Xenon) ⭐ 54 — Agent Harness
 
-An open-source agent runtime built around an **online Evidence Runtime**: a deterministic, zero-LLM verification chain that runs *vertically* through the whole task lifecycle (plan → pre-tool → execution → patch-binding → delivery). It treats every LLM statement as a claim to be verified against real tool results — catching "pasted a diff but never wrote the file" hallucinations at delivery time with zero false-kills.
+An open-source runtime for running, constraining, and evaluating AI coding agents. The core contribution is **architectural**: treating constraint and verification as first-class layers that sit *between* reasoning and tool execution, rather than as afterthoughts.
 
-- **SWE-bench_Lite official harness**: 30 instances, **40.0% instance-level** (12/30, single attempt) on the *cheapest* model tier (deepseek-v4-flash) — **+6.7pp over the previous version in a same-model A/B** (33.3% → 40.0%). Approaching Claude 3.5 Sonnet-level agents at ~1/100 the cost. Full methodology, sampling seed, cost accounting, and per-engine breakdown are committed and reproducible ([report](https://github.com/xianyu-sheng/Xenon/blob/main/evals/results/SWEBENCH_REPORT.md)).
-- 7 inference paradigms (direct / ReAct / Plan-Execute / Reflection + combinations) over one engine abstraction; MCP-native tool layer; **2000+ unit tests** + CI on every commit.
-- Hardened via a systematic **boundary-probing methodology** (malformed input / path-traversal / corrupted-file probes on every public entry point) that surfaced and fixed real defects, including a session path-traversal and a permission-gate fail-open.
+**Why it matters:** Most agent projects prove capability with benchmarks, then ship a different system to users. Xenon's interactive mode and evaluation harness share the same isolation boundaries and verification gates — so the 40.0% SWE-bench_Lite pass rate is a valid claim about the CLI you'd actually use.
+
+**Key results:**
+- **SWE-bench_Lite**: 40.0% instance-level (12/30, single attempt) on deepseek-v4-flash — **+6.7pp over the previous version in same-model A/B**. Full methodology, sampling seed, and cost accounting are committed and reproducible ([report](https://github.com/xianyu-sheng/Xenon/blob/main/evals/results/SWEBENCH_REPORT.md)).
+- **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests. Verified in production use.
+- **Architecture**: 7 swappable reasoning paradigms, Evidence Runtime verification layer, MCP-native tooling, 2300+ unit tests with CI on every commit.
+
+The project demonstrates that **trustworthiness is an architectural property**, not a tuning target.
 
 ### [SmartBench](https://github.com/xianyu-sheng/SmartBench) — evidence-constrained code diagnosis
 
@@ -42,13 +49,11 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 
 ---
 
----
-
 ## Technical focus
 
 **Research interests:**
-- Agent reasoning paradigms and evaluation methodology
-- Evidence-constrained architectures that treat LLM output as claims to be verified
+- Agent harness design: constraint boundaries, evidence gates, and trust semantics
+- Reasoning-paradigm comparison and evaluation methodology
 - Static analysis + semantic IR for deterministic code understanding
 - Cost-efficiency in production LLM applications
 
@@ -64,8 +69,9 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 **Seeking:** AI Agent / LLM Infrastructure engineering roles (2027 grad, available from July 2027)
 
 **What I bring:**
-- Reproducible evaluation methodology (SWE-bench, upstream bug verification)
-- Production-focused architecture design (caching, observability, evidence gates)
+- Reproducible evaluation methodology (SWE-bench official harness, same-model A/B, committed seeds)
+- Adversarial self-review: I probe my own systems for boundary failures and fix them with POCs and regression locks
+- Architecture that keeps guarantees consistent between benchmark and production paths
 - Cross-stack engineering (Python/Go/C++/TypeScript, static analysis, distributed systems)
 
 ---
