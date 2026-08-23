@@ -13,7 +13,7 @@ The corollary I keep returning to: capability benchmarks measure the model, but 
 
 ## Featured work
 
-### [Xenon](https://github.com/xianyu-sheng/Xenon) ⭐ 54 — Agent Harness
+### [Xenon](https://github.com/xianyu-sheng/Xenon) — Agent Harness
 
 An open-source runtime for running, constraining, and evaluating AI coding agents. The core contribution is **architectural**: treating constraint and verification as first-class layers that sit *between* reasoning and tool execution, rather than as afterthoughts.
 
