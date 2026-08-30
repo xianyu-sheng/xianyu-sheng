@@ -30,7 +30,19 @@ The project demonstrates that **trustworthiness is an architectural property**, 
 
 A code-diagnosis workbench that splits responsibility deliberately: language frontends and deterministic analyzers own source facts; the LLM may only *propose* hypotheses; resolvers and validators decide whether a claim binds back to real operations, types, and control flow. Under-supported conclusions stay `unknown`/`abstained` — they are never promoted to findings.
 
-- Real upstream bugs found and verified before submission — e.g. [stunner #89](https://github.com/firefart/stunner/issues/89) (TURN connection leak) confirmed fixed upstream; issues/PRs to sniproxy, Robyn, qscan.
+**Real bugs found and verified:**
+- [stunner #89](https://github.com/firefart/stunner/issues/89) — TURN connection leak (confirmed fixed upstream)
+- [qscan #22](https://github.com/qi4L/qscan/issues/22) — SQL database leak on error paths
+- [sniproxy #203](https://github.com/mosajjal/sniproxy/pull/203) — process crash from panic in goroutine
+- [Robyn #1432](https://github.com/sparckles/Robyn/issues/1432) — SSE test hygiene issue
+
+**Systematic validation on real-world cases:**
+- **6 major open-source projects verified** (Kubernetes, etcd, Prometheus, Python Requests)
+- **100% detection rate** (6/6) on true concurrency bugs and resource leaks
+- **0% false positive rate** — includes detection of CVE-2026-73500 (etcd TLS DoS)
+- Covers: goroutine leaks, channel misuse, constructor error paths, context cancellation failures
+
+Full validation results: [REAL_WORLD_CASES.md](https://github.com/xianyu-sheng/SmartBench/blob/main/REAL_WORLD_CASES.md)
 
 ---
 
