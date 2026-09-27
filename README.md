@@ -21,7 +21,7 @@ An open-source runtime for running, constraining, and evaluating AI coding agent
 
 **Key results:**
 - **SWE-bench_Lite**: 40.0% instance-level (12/30, single attempt) on deepseek-v4-flash — **+6.7pp over the previous version in same-model A/B**. Full methodology, sampling seed, and cost accounting are committed and reproducible ([report](https://github.com/xianyu-sheng/Xenon/blob/main/evals/results/SWEBENCH_REPORT.md)).
-- **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests. Verified in production use.
+- **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests, validated end-to-end.
 - **Architecture**: 7 swappable reasoning paradigms, Evidence Runtime verification layer, MCP-native tooling, 2300+ unit tests with CI on every commit.
 
 The project demonstrates that **trustworthiness is an architectural property**, not a tuning target.
@@ -37,9 +37,9 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 - [Robyn #1432](https://github.com/sparckles/Robyn/issues/1432) — SSE test hygiene issue
 
 **Systematic validation on real-world cases:**
-- **6 major open-source projects verified** (Kubernetes, etcd, Prometheus, Python Requests)
-- **100% detection rate** (6/6) on true concurrency bugs and resource leaks
-- **0% false positive rate** — includes detection of CVE-2026-73500 (etcd TLS DoS)
+- **6 real-world cases from 4 major projects** (Kubernetes, etcd, Prometheus, Python Requests)
+- **100% detection (6/6)** on the selected true concurrency bugs and resource leaks
+- **0 false positives on these 6 controlled before/after cases** — regression-style validation on fixed snapshots (not a blind benchmark over full codebases); includes the unbounded-goroutine pattern behind [CVE-2026-73500](https://nvd.nist.gov/vuln/detail/cve-2026-73500) (etcd TLS DoS)
 - Covers: goroutine leaks, channel misuse, constructor error paths, context cancellation failures
 
 Full validation results: [REAL_WORLD_CASES.md](https://github.com/xianyu-sheng/SmartBench/blob/main/REAL_WORLD_CASES.md)
@@ -56,8 +56,6 @@ Full validation results: [REAL_WORLD_CASES.md](https://github.com/xianyu-sheng/S
 **Open / under discussion:**
 
 - [NousResearch/hermes-agent #80155](https://github.com/NousResearch/hermes-agent/pull/80155) — gate finalization on active todos; surfaced a boundary that drew maintainer triage and a "facing the same problem" from the community.
-- [volcengine/veadk-python #716](https://github.com/volcengine/veadk-python/pull/716) — Xenon Skill + MCP interoperability docs.
-- [deepseek-ai/awesome-deepseek-agent #301](https://github.com/deepseek-ai/awesome-deepseek-agent/pull/301) — listing Xenon as a DeepSeek V4 terminal agent.
 
 ---
 
@@ -91,7 +89,7 @@ Full validation results: [REAL_WORLD_CASES.md](https://github.com/xianyu-sheng/S
 ## Contact
 
 - **GitHub**: [@xianyu-sheng](https://github.com/xianyu-sheng)
-- **Email**: xianyu.sheng.research@gmail.com
+- **Email**: 2107644732@qq.com (primary) · xianyu.sheng.research@gmail.com
 - **Technical blog**: [掘金 @闲余生](https://juejin.cn/user/1131827254804154)
 - **Location**: Chongqing / Chengdu, China (open to relocation)
 
