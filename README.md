@@ -22,7 +22,9 @@ An open-source runtime for running, constraining, and evaluating AI coding agent
 **Key results:**
 - **SWE-bench_Lite**: 40.0% instance-level (12/30, single attempt) on deepseek-v4-flash — **+6.7pp over the previous version in same-model A/B**. Full methodology, sampling seed, and cost accounting are committed and reproducible ([report](https://github.com/xianyu-sheng/Xenon/blob/main/evals/results/SWEBENCH_REPORT.md)).
 - **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests, validated end-to-end.
-- **Architecture**: 7 swappable reasoning paradigms, Evidence Runtime verification layer, MCP-native tooling, 2300+ unit tests with CI on every commit.
+- **Architecture**: 6 swappable reasoning engines plus a direct-chat branch, a three-tier trust model (evidence hash chain / structural gate / semantic checklist), MCP-native tooling, 3100+ tests with CI on every commit.
+
+**Recognition:** listed in [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) (Collabnix; MCP Clients → Command Line Tools).
 
 The project demonstrates that **trustworthiness is an architectural property**, not a tuning target.
 
