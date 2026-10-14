@@ -24,7 +24,7 @@ An open-source runtime for running, constraining, and evaluating AI coding agent
 - **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests, validated end-to-end.
 - **Architecture**: 6 swappable reasoning engines plus a direct-chat branch, a three-tier trust model (evidence hash chain / structural gate / semantic checklist), MCP-native tooling, 3100+ tests with CI on every commit.
 
-**Recognition:** listed in [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) (Collabnix; MCP Clients → Command Line Tools).
+**Recognition:** listed in [awesome-opensource-ai](https://github.com/alvinreal/awesome-opensource-ai) (Agentic AI & Multi-Agent Systems → Autonomous Coding Agents) and [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) (Collabnix; MCP Clients → Command Line Tools).
 
 The project demonstrates that **trustworthiness is an architectural property**, not a tuning target.
 
