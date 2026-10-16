@@ -17,14 +17,14 @@ The corollary I keep returning to: capability benchmarks measure the model, but 
 
 An open-source runtime for running, constraining, and evaluating AI coding agents. The core contribution is **architectural**: treating constraint and verification as first-class layers that sit *between* reasoning and tool execution, rather than as afterthoughts.
 
-**Why it matters:** Most agent projects prove capability with benchmarks, then ship a different system to users. Xenon's interactive mode and evaluation harness share the same isolation boundaries and verification gates — so the 40.0% SWE-bench_Lite pass rate is a valid claim about the CLI you'd actually use.
+**Why it matters:** Most agent projects prove capability with benchmarks, then ship a different system to users. Xenon's interactive mode and evaluation harness share the same isolation boundaries and verification gates — so the SWE-bench_Lite results are claims about the CLI you'd actually use, not about a separate demo build.
 
 **Key results:**
-- **SWE-bench_Lite**: 40.0% instance-level (12/30, single attempt) on deepseek-v4-flash — **+6.7pp over the previous version in same-model A/B**. Full methodology, sampling seed, and cost accounting are committed and reproducible ([report](https://github.com/xianyu-sheng/Xenon/blob/main/evals/results/SWEBENCH_REPORT.md)).
+- **SWE-bench_Lite** (30-instance stratified sample, seed 20260729, deepseek-v4-flash, react engine): the current framework resolved **25/30** in its first full run under a test-visible protocol, and the earlier blind same-model A/B (v0.8.2, same sample, 10-step budget) measured **40.0% instance-level (12/30, +6.7pp over its predecessor)**. A blind re-run of the current framework — aligned with the standard SWE-bench protocol — is in flight for a directly comparable number. Methodology, manifest and raw predictions are committed and reproducible ([EVAL_RESULTS.md](https://github.com/xianyu-sheng/Xenon/blob/main/docs/EVAL_RESULTS.md) · [manifest](https://github.com/xianyu-sheng/Xenon/blob/main/evals/manifests/swebench-lite-30-seed20260729.json)).
 - **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests, validated end-to-end.
 - **Architecture**: 6 swappable reasoning engines plus a direct-chat branch, a three-tier trust model (evidence hash chain / structural gate / semantic checklist), MCP-native tooling, 3100+ tests with CI on every commit.
 
-**Recognition:** listed in [awesome-opensource-ai](https://github.com/alvinreal/awesome-opensource-ai) (Agentic AI & Multi-Agent Systems → Autonomous Coding Agents) and [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) (Collabnix; MCP Clients → Command Line Tools).
+**Recognition:** featured in [Awesome-MCP-ZH](https://github.com/yzfly/Awesome-MCP-ZH) (MCP clients → verifiable terminal coding agent), [awesome-opensource-ai](https://github.com/alvinreal/awesome-opensource-ai) (Agentic AI & Multi-Agent Systems → Autonomous Coding Agents), [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) (Collabnix; MCP Clients → Command Line Tools), and [awesome-ai-coding-tools](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools) (CLI coding agents — special thanks to @xianyu-sheng).
 
 The project demonstrates that **trustworthiness is an architectural property**, not a tuning target.
 
