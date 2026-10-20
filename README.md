@@ -49,6 +49,8 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 
 Full validation results: [REAL_WORLD_CASES.md](https://github.com/xianyu-sheng/SmartBench/blob/main/REAL_WORLD_CASES.md)
 
+**Recognition:** [awesome-testing](https://github.com/TheJambo/awesome-testing) — SmartBench is listed under **Static Analysis** ([PR #305](https://github.com/TheJambo/awesome-testing/pull/305), merged 2026-10-19).
+
 ---
 
 ## Open-source contributions
