@@ -37,6 +37,7 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 - [qscan #22](https://github.com/qi4L/qscan/issues/22) — SQL database leak on error paths
 - [sniproxy #203](https://github.com/mosajjal/sniproxy/pull/203) — process crash from panic in goroutine
 - [go-imap #773](https://github.com/emersion/go-imap/pull/773) — malformed APPEND left the client without a tagged response (**fix merged upstream**)
+- [webdav #374](https://github.com/hacdias/webdav/pull/374) — CORS early return made "unprotected config" warnings unreachable (**fix merged upstream, 2026-10-24**)
 - [Robyn #1432](https://github.com/sparckles/Robyn/issues/1432) — SSE test hygiene issue
 
 **Capability added through this work (2026-10):** counterfactual patch review and engineering trade-off adjudication — SmartBench flags patches that are *worse than the status quo* under the failure they address (e.g. replacing fail-stop with an unbacked retry loop), and labels findings by documented intent, patch risk and reachability before anything is filed upstream.
