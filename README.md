@@ -22,7 +22,8 @@ An open-source runtime for running, constraining, and evaluating AI coding agent
 **Key results:**
 - **SWE-bench_Lite** (deepseek-v4-flash, react engine, 120 steps, official harness, blind — no test patch, no test-name hints): three runs average **62.2%** on a frozen 30-instance sample (seed 20260729) and **52.2%** on a zero-overlap held-out sample (seed 20261016). The previous generation (v0.8.5) scores 63.3% and 46.7% on the same two samples — the sign flip between samples showed the original sample carried in-sample tuning, so the held-out number is the one to trust. (Superseded: the v0.8.2 "40.0% instance-level" was a five-engine union, not a single-engine score; and v0.8.3+ runs before 2026-10 injected test names into the prompt.) Methodology, manifests, per-run results and sha256-checked archives: [EVAL_RESULTS.md](https://github.com/xianyu-sheng/Xenon/blob/main/docs/EVAL_RESULTS.md).
 - **Security hardening (v0.8.5)**: Found and fixed two real sandbox escapes via systematic boundary probing — path fence symlink bypass + runtime binding gap. Each came with POC, validity self-check (revert → must fail), and regression tests, validated end-to-end.
-- **Architecture**: 6 swappable reasoning engines plus a direct-chat branch, a three-tier trust model (evidence hash chain / structural gate / semantic checklist), MCP-native tooling, 3100+ tests with CI on every commit.
+- **Kernel architecture**: one `LoopRuntime`, one append-only ledger, one set of read-only projections. Capability catalog (read/search/edit/verify/vcs/shell/remote), typed receipts, V0/V1/V2 verification, claim→fact binding, V2 coverage audit, one-shot approvals, MCP per-tool ToolSpecs, and a finalizer that owns delivery commits with preflight audit/rollback.
+- **Engineering**: 4,000+ tests across Python 3.10–3.12, hash-chain tail checks, real TTY approval transcripts, and reproducible delivery-failure/rollback tests.
 
 **Recognition:** featured in [Awesome-MCP-ZH](https://github.com/yzfly/Awesome-MCP-ZH) (MCP clients → verifiable terminal coding agent), [awesome-opensource-ai](https://github.com/alvinreal/awesome-opensource-ai) (Agentic AI & Multi-Agent Systems → Autonomous Coding Agents), [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists) (Collabnix; MCP Clients → Command Line Tools), and [awesome-ai-coding-tools](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools) (CLI coding agents — special thanks to @xianyu-sheng).
 
@@ -43,8 +44,10 @@ A code-diagnosis workbench that splits responsibility deliberately: language fro
 **Capability added through this work (2026-10):** counterfactual patch review and engineering trade-off adjudication — SmartBench flags patches that are *worse than the status quo* under the failure they address (e.g. replacing fail-stop with an unbacked retry loop), and labels findings by documented intent, patch risk and reachability before anything is filed upstream.
 
 **Systematic validation on real-world cases:**
+- **50/50** regression snapshots pass (25 before/after cases)
 - **6 real-world cases from 4 major projects** (Kubernetes, etcd, Prometheus, Python Requests)
 - **100% detection (6/6)** on the selected true concurrency bugs and resource leaks
+- **40,650** Go type-evidence items; internal grounding **22% → 81%**
 - **0 false positives on these 6 controlled before/after cases** — regression-style validation on fixed snapshots (not a blind benchmark over full codebases); includes the unbounded-goroutine pattern behind [CVE-2026-73500](https://nvd.nist.gov/vuln/detail/cve-2026-73500) (etcd TLS DoS)
 - Covers: goroutine leaks, channel misuse, constructor error paths, context cancellation failures
 
@@ -77,6 +80,7 @@ Full validation results: [REAL_WORLD_CASES.md](https://github.com/xianyu-sheng/S
 - Cross-language semantic analysis (Python, Go, TypeScript, Rust)
 - MCP protocol integration for agent tool ecosystems
 - Benchmark design for agent reliability measurement
+- Kernel-first agent runtimes: event-sourced ledgers, typed receipts, projection-only state
 
 ---
 
