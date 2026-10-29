@@ -1,32 +1,54 @@
-
 <h1 align="center">Hi 👋, I'm Xianyu Sheng</h1>
-<h3 align="center">Building AI Agent Infrastructure | CQUPT Undergraduate</h3>
+<h3 align="center">Building verifiable AI Agent infrastructure | CQUPT Undergraduate</h3>
 
 <p align="center">
   <a href="https://github.com/xianyu-sheng"><img src="https://img.shields.io/badge/GitHub-xianyu--sheng-181717?style=flat-square&logo=github" alt="GitHub"></a>
-  <a href="https://github.com/xianyu-sheng/omniagent/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/omniagent?style=flat-square&label=omniagent" alt="omniagent release"></a>
-  <a href="https://github.com/xianyu-sheng/Agent-hub/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/Agent-hub?style=flat-square&label=agent-hub" alt="agent-hub release"></a>
-  <a href="https://github.com/xianyu-sheng/SmartBench/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/SmartBench?style=flat-square&label=smartbench" alt="smartbench release"></a>
+  <a href="https://github.com/xianyu-sheng/Xenon/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/Xenon?style=flat-square&label=Xenon" alt="Xenon release"></a>
+  <a href="https://github.com/xianyu-sheng/SmartBench/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/SmartBench?style=flat-square&label=SmartBench" alt="SmartBench release"></a>
+  <a href="https://github.com/xianyu-sheng/Agent-hub/releases"><img src="https://img.shields.io/github/v/release/xianyu-sheng/Agent-hub?style=flat-square&label=Agent-hub" alt="Agent-hub release"></a>
 </p>
 
 <p align="center">
   <b>📦 Quick Install:</b> &nbsp;
-  <code>pip install git+https://github.com/xianyu-sheng/omniagent.git</code> &nbsp;|&nbsp;
-  <code>pip install git+https://github.com/xianyu-sheng/Agent-hub.git</code> &nbsp;|&nbsp;
-  <code>pip install git+https://github.com/xianyu-sheng/SmartBench.git</code>
+  <code>pip install https://github.com/xianyu-sheng/Xenon/releases/download/v0.9.5/xenon_harness-0.9.5-py3-none-any.whl</code>
 </p>
 
 ---
 
 ### 🧠 About Me
 
-I'm an undergraduate at **CQUPT (Chongqing University of Posts and Telecommunications)**, passionate about building practical AI-powered developer tools. My focus is on **LLM agents, multi-agent orchestration, and AI-assisted software engineering**.
+I'm an undergraduate at **CQUPT (Chongqing University of Posts and Telecommunications)**, building practical AI agent systems. My focus is **verifiable agent runtimes**: one control loop, one append-only ledger, typed tool receipts, deterministic verification, and projections that never become a second source of truth.
 
-> *From "building many projects" to "designing an Agent system" — I build tools that make developers (and myself) more productive.*
+> *The model proposes; the harness proves. A model can be wrong, but it must not be able to turn an unverified claim into a delivery.*
 
 ---
 
 ### 🚀 Featured Projects
+
+<p align="center">
+  <a href="https://github.com/xianyu-sheng/Xenon">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=xianyu-sheng&repo=Xenon&theme=tokyonight" />
+  </a>
+  <a href="https://github.com/xianyu-sheng/SmartBench">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=xianyu-sheng&repo=SmartBench&theme=tokyonight" />
+  </a>
+</p>
+
+#### 🧬 [Xenon](https://github.com/xianyu-sheng/Xenon) — Verifiable Coding Agent Harness
+
+A single-loop coding agent runtime: `LoopRuntime` is the only writer, the ledger is the only truth, and every tool result is a typed receipt. Capability catalog + MCP per-tool ToolSpecs, policy/approval, V0/V1/V2 verification, claim→fact binding, V2 coverage audit, debt/repair, and a finalizer that owns all delivery commits.
+
+- **SWE-bench Lite**: 62.2% on the frozen 30-case subset, 52.2% on a zero-overlap held-out set (blind protocol, official harness, 3-run mean).
+- **4,000+** tests across Python 3.10–3.12; evidence chain, TTY transcripts and rollback paths are tested.
+- Listed in **Awesome-MCP-ZH**, **awesome-opensource-ai**, **Collabnix awesome-mcp-lists**, and **awesome-ai-coding-tools**.
+
+#### 🔬 [SmartBench](https://github.com/xianyu-sheng/SmartBench) — Evidence-Constrained Code Diagnosis
+
+Deterministic analyzers own the source facts; the LLM may only propose hypotheses. A resolver/validator decides whether a hypothesis binds back to real operations, types and control flow; anything unbound stays `unknown` or `abstained`.
+
+- **50/50** regression snapshots pass; **6/6** controlled real-world concurrency/resource-lifetime cases verified.
+- **4** upstream reports: qscan, stunner, sniproxy, Robyn.
+- Go type evidence: **40,650** items; internal grounding **22% → 81%**.
 
 <p align="center">
   <a href="https://github.com/xianyu-sheng/omniagent">
@@ -39,28 +61,15 @@ I'm an undergraduate at **CQUPT (Chongqing University of Posts and Telecommunica
 
 #### 🔧 [OmniAgent](https://github.com/xianyu-sheng/omniagent) — Local Multi-Model AI Coding Agent CLI
 
-A local-first AI coding assistant with multi-model routing (DeepSeek, OpenAI, Claude, Gemini, Qwen, Ollama), ReAct / Plan-Execute / Reflection workflows, MCP tools, memory system, and checkpoint protection. Features a modern Textual TUI and 100% eval pass rate (20/20 tasks).
+A local-first coding assistant with multi-model routing (DeepSeek, OpenAI, Claude, Gemini, Qwen, Ollama), ReAct / Plan-Execute / Reflection workflows, MCP tools, memory, checkpoint protection, and a Textual TUI.
 
 #### 🎯 [Agent Hub](https://github.com/xianyu-sheng/Agent-hub) — Multi-Agent Orchestration System
 
-A decoupled central scheduler that discovers professional agents via `agent.yaml` manifests, routes natural language tasks into cross-agent DAGs, and executes them with 7 collaboration strategies (debate, reflection, voting, HITL, etc.).
-
-<p align="center">
-  <a href="https://github.com/xianyu-sheng/resume-sync">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=xianyu-sheng&repo=resume-sync&theme=tokyonight" />
-  </a>
-  <a href="https://github.com/xianyu-sheng/SmartBench">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=xianyu-sheng&repo=SmartBench&theme=tokyonight" />
-  </a>
-</p>
+A decoupled central scheduler that discovers agents via `agent.yaml` manifests, routes natural-language tasks into cross-agent DAGs, and executes them with debate, reflection, voting and human-in-the-loop strategies.
 
 #### 📄 [Resume-Sync](https://github.com/xianyu-sheng/resume-sync) — Git → LaTeX Resume Auto-Sync
 
-Automatically detects project commits, calls LLM to generate high-quality resume bullets (with a 10-dimension FAANG-style scoring system), updates LaTeX source, and compiles PDF — eliminating the pain of manual resume updates during job hunting.
-
-#### 🔬 [SmartBench](https://github.com/xianyu-sheng/SmartBench) — Universal Code Diagnostic Platform
-
-LLM-powered multi-agent debate engine for code analysis. Supports 14 languages and 20+ frameworks, with RAG vector retrieval + evidence verification to eliminate LLM hallucinations. Zero code modification guarantee.
+Detects project commits, calls an LLM to draft resume bullets, updates LaTeX source and compiles the PDF — built to remove manual resume maintenance during job hunting.
 
 ---
 
@@ -74,9 +83,11 @@ LLM-powered multi-agent debate engine for code analysis. Supports 14 languages a
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
 </p>
 
-**AI/LLM:** Prompt Engineering · Agent Architecture · Multi-Agent Systems · RAG · MCP Protocol · Tool Use
+**Agent Runtime:** Single-loop execution · Event sourcing · Append-only ledger · Projection-only state · Typed receipts · Capability catalogs · Policy/approval · V0/V1/V2 verification · Finalizer/rollback
 
-**Areas:** CLI Tools · Developer Productivity · Distributed Systems · Code Analysis · LaTeX Automation
+**AI/LLM:** Agent architecture · Multi-agent systems · MCP · Tool use · RAG/GraphRAG · Prompt engineering · SWE-bench evaluation
+
+**Engineering:** CLI/TUI · Code analysis · Distributed systems · CI/CD · Developer productivity
 
 ---
 
@@ -91,12 +102,18 @@ LLM-powered multi-agent debate engine for code analysis. Supports 14 languages a
 
 ### 🌱 What I'm Working On
 
-- 🔭 Building a cohesive **Agent ecosystem** — omniagent (coding) + SmartBench (analysis) + resume-sync (career) orchestrated by Agent Hub
-- 🌍 Translating all project documentation to **bilingual (CN/EN)**
-- 📦 Publishing packages to **PyPI**
-- 📝 Writing technical blog posts about agent architecture and LLM application design
+- 🔭 Making **Xenon** a kernel-first, replayable coding harness: one ledger, typed receipts, V2 coverage, MCP, approvals and deterministic delivery.
+- 🧪 Turning **SmartBench** from a controlled audit workbench into a measurable evidence-constrained diagnosis system.
+- 🌍 Bilingual docs, reproducible benchmarks, and stricter CI evidence for every release.
 
 ---
+
+### 🏷️ Featured In
+
+- [Awesome-MCP-ZH](https://github.com/yzfly/Awesome-MCP-ZH)
+- [awesome-opensource-ai](https://github.com/alvinreal/awesome-opensource-ai)
+- [awesome-mcp-lists](https://github.com/collabnix/awesome-mcp-lists)
+- [awesome-ai-coding-tools](https://github.com/mahmoudsajjadi/awesome-ai-coding-tools)
 
 <p align="center">
   <i>⭐ If you find my projects useful, a star means a lot! Let's connect and build together.</i>
