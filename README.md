@@ -1,3 +1,5 @@
+**English** | [简体中文](README.zh-CN.md)
+
 # Hi, I'm Xianyu Sheng 👋
 
 M.S. in Computer Science @ CQUPT (2027). I build **Agent Harnesses** — the runtime layer that decides whether an AI agent's output can be trusted. I verify my work with reproducible benchmarks, adversarial boundary probing, and upstream contributions, not adjectives.
